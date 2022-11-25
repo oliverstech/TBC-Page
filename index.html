@@ -1,0 +1,33 @@
+<center>
+    <h1 style="font-family: Microsoft JhengHei" id="heading">This page is still in progress.</h1>
+    <p style="font-family: Calibri" id="m-text">The site "" is still being built. Please be patient!</p>
+    <p style="font-family: Calibri"id="visittext">Visit Main Site:</p>
+    <a style="font-family: Calibri" id="link"></a>
+
+</center>
+<script>
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const showsitename = urlParams.get('showsitename');
+    const sitename = urlParams.get('sitename');
+    const showlink = urlParams.get('showlink');
+    const link = urlParams.get('link');
+
+    if (showsitename == "true") {
+        document.getElementById('m-text').innerHTML = "The site \""+ sitename + "\" is still being built. Please be patient!";
+    }
+    else {
+        document.getElementById('m-text').innerHTML = "The site is still being built. Please be patient!";
+    }
+
+    if (showlink == "true") {
+        document.getElementById('visittext').hidden = false;
+        document.getElementById('link').innerHTML = link;
+        document.getElementById('link').href = link;
+    }
+    else {
+        document.getElementById('visittext').hidden = true;
+    }
+
+    
+</script>
